@@ -22,7 +22,7 @@ const Formulario = ({setPacientes, pacientes, setPaciente, paciente}) => {
   }, [paciente])
 
   const generateId = () => {
-    const random = Math.random().toString(36).substring(2);
+    const random = Math.random().toString(36).substr(2);
     const fecha = Date.now().toString(36);
     
     return random + fecha
@@ -30,7 +30,6 @@ const Formulario = ({setPacientes, pacientes, setPaciente, paciente}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
 
     if([nombreMascota, nombrePropietario, email, fecha, syntoms].includes('')){
       
@@ -53,9 +52,7 @@ const Formulario = ({setPacientes, pacientes, setPaciente, paciente}) => {
     if(paciente.id){
       objetoPaciente.id = paciente.id;
 
-      const pacientesActualizados = pacientes.map(pacienteState => {
-        pacienteState.id === paciente.id ? objetoPaciente : pacienteState
-      })
+      const pacientesActualizados = pacientes.map(pacienteState => pacienteState.id === paciente.id ? objetoPaciente : pacienteState)
       setPacientes(pacientesActualizados)
       setPaciente({})
 

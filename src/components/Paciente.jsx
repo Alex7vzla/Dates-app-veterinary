@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Paciente = ({paciente, setPaciente, eliminarPaciente}) => {
 
   const {nombreMascota, nombrePropietario, email, fecha, syntoms, id} = paciente;

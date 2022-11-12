@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     const getLS = () => {
-      const pacientesLS = JSON.parse(localStorage.getItem('paceintes')) ?? [];
+      const pacientesLS = JSON.parse(localStorage.getItem('pacientes')) ?? [];
       setPacientes(pacientesLS)
     }
     getLS();
@@ -21,9 +21,7 @@ function App() {
   }, [pacientes])
 
   const eliminarPaciente = (id) => {
-    const pacientesActualizados = pacientes.filter((paciente) => {
-      paciente.id !== id
-    });
+    const pacientesActualizados = pacientes.filter(paciente => paciente.id !== id);
     setPacientes(pacientesActualizados)
   };
 
